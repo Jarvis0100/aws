@@ -1,0 +1,11 @@
+version: '3'
+services:
+  myservice:
+    image: myimage12:latest
+    build:
+      context: https://github.com/Jarvis0100/aws.git#main
+      dockerfile: Dockerfile
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
